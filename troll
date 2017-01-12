@@ -1,5 +1,62 @@
 #!/bin/bash
-terminal='tty'
-exec < /usr/date
-echo "$line"
-#ssh pi@$line 
+# Importare i colori
+touch /usr/local/bin/colors
+echo "#!/bin/bash" > /usr/local/bin/colors
+echo "export WHITE='\e[1;37m'" >> /usr/local/bin/colors
+echo "export LGRAY='\e[0;37m'" >> /usr/local/bin/colors
+echo "export GRAY='\e[1;30m'" >> /usr/local/bin/colors
+echo "export BLACK='\e[1;30m'" >> /usr/local/bin/colors
+echo "export RED='\e[0;31m'" >> /usr/local/bin/colors
+echo "export LRED='\e[1;31m'" >> /usr/local/bin/colors
+echo "export GREEN='\e[0;32m'" >> /usr/local/bin/colors
+echo "export LGREEN='\e[1;32m'" >> /usr/local/bin/colors
+echo "export BROWN='\e[0;33m'" >> /usr/local/bin/colors
+echo "export YELLOW='\e[1;33m'" >> /usr/local/bin/colors
+echo "export BLUE='\e[0;34m'" >> /usr/local/bin/colors
+echo "export LBLUE='\e[1;34m'" >> /usr/local/bin/colors
+echo "export PURPLE='\e[0;35m'" >> /usr/local/bin/colors
+echo "export PINK='\e[1;35m'" >> /usr/local/bin/colors
+echo "export CYAN='\e[0;36m'" >> /usr/local/bin/colors
+echo "export LCYAN='\e[1;36m'" >> /usr/local/bin/colors
+echo "export Z='\e[0m'" >> /usr/local/bin/colors
+echo "export BACKWHITE='\e[107m'" >> /usr/local/bin/colors
+echo "export BACKBLACK='\e[40m'" >> /usr/local/bin/colors
+echo "export BACKBLUE='\e[44m'" >> /usr/local/bin/colors
+echo "export BACKDEFAULT='\e[49m'" >> /usr/local/bin/colors
+# Fare il Source
+. colors
+# IP
+ip = 192.168.10.${1}
+#Gruppo di controllo degli argomenti
+if [ $# > 2 ]
+    then
+        echo -e "$LCYAN Hai sbagliato args$YELLOW | troll final_ip + -option "
+        exit 1
+    elif [ $2 == "-c" ]
+        then
+            configure
+    elif [ $2 == "-r" ]
+        then
+            remove
+    elif [ $# = 1 ]
+        then
+            attack
+fi
+ 
+configure () {
+    ssh-copy-id pi@$ip
+    ssh pi@ip sudo apt-get install figlet
+    ssh pi@ip sudo echo "#!/bin/bash" > /usr/loop && sudo echo "variabile=0" >> /usr/loop && sudo echo "while [ variabile=9 ]; do" >> /usr/loop && sudo echo "    figlet 'Lezzo'" >> /usr/loop && sudo echo "done" >> /usr/loop
+    ssh pi@ip sudo echo "<!doctype html><html><head><title>Zeb89</title></head><body><center><img src='http://i.ytimg.com/vi/ivV7hEZ6YUM/0.jpg'><p><font size='10' color='black' >Eh .... Volevi !!!!</font></p><p><font size='10' color='red'>Ma lisciami le mele, LEZZO</font></p></center></body></html>" > /usr/zeb.html
+    ssh pi@ip ls /bin > /usr/comandi && sudo echo "#!/bin/bash" > /usr/block && sudo echo "terminal='tty'" >> /usr/block && sudo echo "" >> /usr/block
+}
+
+attack () {
+ssh pi@ip echo "figlet 'Eh volevi'" >> .bashrc && echo "figlet 'Lezzo'" >> .bashrc &&
+}
+
+
+
+
+
+termi
