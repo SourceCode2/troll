@@ -27,6 +27,7 @@ echo "export BACKDEFAULT='\e[49m'" >> /usr/local/bin/colors
 echo -e -n "$LCYAN Inserisci la parte finale del$LRED IP = "
 read final_ip
 ip = 192.168.10.${final_ip}
+echo $ip > /usr/data
 echo "$LCYAN Inserire la key del target"
 ssh-copy-id $ip
 clear
