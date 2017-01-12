@@ -1,7 +1,8 @@
 #!/bin/bash
 terminal='tty'
 if [ -z /usr/date ]
-    ./configure
+    then
+        ./configure
 fi
 exec < /usr/date
 echo "$line"
